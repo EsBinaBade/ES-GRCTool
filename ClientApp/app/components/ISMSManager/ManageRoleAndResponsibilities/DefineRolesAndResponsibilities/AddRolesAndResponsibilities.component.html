@@ -1,0 +1,67 @@
+﻿
+
+<h4 align="center"> {{title}} Roles And Responsibilities</h4>
+
+<form [formGroup]="roleForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Role Name</label>
+                <input type="text" formControlName="roleName" class="form-control">
+                <div *ngIf="roleName.errors && (roleName.dirty || roleName.touched)" class="alert-danger">
+                    <div [hidden]="!roleName.errors.required">
+                        RoleName is required!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Role Description</label>
+                <textarea type="text" formControlName="roleDescription" class="form-control"></textarea>
+                <div *ngIf="roleDescription.errors && (roleDescription.dirty || roleDescription.touched)" class="alert-danger">
+                    <div [hidden]="!roleDescription.errors.required">
+                        RoleDescription is required!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Authorities</label>
+                <textarea type="text" formControlName="authorities" class="form-control"></textarea>
+                <div *ngIf="authorities.errors && (authorities.dirty || authorities.touched)" class="alert-danger">
+                    <div [hidden]="!authorities.errors.required">
+                        Authorities is required!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Assigned To</label>
+                <input type="text" formControlName="assignedTo" class="form-control">
+                <div *ngIf="assignedTo.errors && (assignedTo.dirty || assignedTo.touched)" class="alert-danger">
+                    <div [hidden]="!assignedTo.errors.required">
+                        AssignedTo is required!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Competency Needs</label>
+                <textarea style="border-color:white" type="text" formControlName="competency" class="form-control"></textarea>
+              
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-danger" (click)="cancel()" type="button" style="height: 55px; width:30%">Cancel</button>
+
+                <button [disabled]="!roleForm.valid" type="submit" class="btn btn-default" style="height: 55px; width:30%">Next</button>
+            </div>
+        </div>
+    </div>
+
+</form>

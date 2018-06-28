@@ -1,0 +1,32 @@
+﻿
+<h5 style="text-align:center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Define Committee Charter</h5>
+<br />
+
+
+<div class="col-md-12">
+    <table class="table" *ngIf="committeList">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Roles And Responsibilities</th>
+                <th><span class="glyphicon glyphicon-plus" [routerLink]="['/addCommittee']"> </span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let committee of committeList">
+                <td><span class="glyphicon glyphicon-edit" [routerLink]="['/edit/committee/', committee.committeeId]"></span></td>
+                <td>{{committee.chairman}}</td>
+                <td><span class="glyphicon glyphicon-trash" (click)="DeleteCommittee(committee.committeeId)"></span></td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br />
+
+    <button class="btn btn-default" routerLink="/viewTaskAssignment" style="float:right; height: 45px; width:20%">NEXT</button>
+</div>
+
+
+
+
+

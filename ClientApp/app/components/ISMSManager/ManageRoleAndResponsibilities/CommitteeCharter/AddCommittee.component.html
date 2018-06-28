@@ -1,0 +1,108 @@
+﻿
+
+<h4 align="center"> {{title}} Roles And Responsibilities</h4>
+
+<form [formGroup]="committeeForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label> Committee Chairman</label>
+                <select class="form-control" data-val="true" formControlName="chairman">
+                    <option value=""> Select Standard</option>
+                    <option *ngFor="let committee of committeeList" value={{committee.chairman}}>
+                        {{committee.chairman}}
+                    </option>
+                </select>
+                <div *ngIf="chairman.errors && (chairman.dirty || chairman.touched)" class="alert alert-danger">
+                    <div [hidden]="!chairman.errors.required">
+                        chairman Name Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label> Deputy Chairman</label>
+                <select class="form-control" data-val="true" formControlName="deputyChairman">
+                    <option value=""> Select Standard</option>
+                    <option *ngFor="let committee of committeeList" value={{committee.deputyChairman}}>
+                        {{committee.deputyChairman}}
+                    </option>
+                </select>
+                <div *ngIf="deputyChairman.errors && (deputyChairman.dirty || deputyChairman.touched)" class="alert alert-danger">
+                    <div [hidden]="!deputyChairman.errors.required">
+                        deputyChairman Name Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label> Members</label>
+                <select class="form-control" data-val="true" formControlName="members">
+                    <option value=""> Select Standard</option>
+                    <option *ngFor="let committee of committeeList" value={{committee.members}}>
+                        {{committee.members}}
+                    </option>
+                </select>
+                <div *ngIf="members.errors && (members.dirty || members.touched)" class="alert alert-danger">
+                    <div [hidden]="!members.errors.required">
+                        members Name Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>About the committee</label>
+                <textarea type="text" formControlName="about" class="form-control"></textarea>
+                <div *ngIf="about.errors && (about.dirty || about.touched)" class="alert-danger">
+                    <div [hidden]="!about.errors.required">
+                        About committee is required!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Attendance</label>
+                <textarea type="text" formControlName="attendance" class="form-control"></textarea>
+                <div *ngIf="attendance.errors && (attendance.dirty || attendance.touched)" class="alert-danger">
+                    <div [hidden]="!attendance.errors.required">
+                        About attendance is required!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Voting</label>
+                <textarea type="text" formControlName="voting" class="form-control"></textarea>
+                <div *ngIf="voting.errors && (voting.dirty || voting.touched)" class="alert-danger">
+                    <div [hidden]="!voting.errors.required">
+                        About committee is required!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Meeting Frequency</label>
+                <textarea type="text" formControlName="meetingFrequency" class="form-control"></textarea>
+                <div *ngIf="meetingFrequency.errors && (meetingFrequency.dirty || meetingFrequency.touched)" class="alert-danger">
+                    <div [hidden]="!meetingFrequency.errors.required">
+                        About committee is required!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-danger" (click)="cancel()" type="button" style="height: 55px; width:30%">Cancel</button>
+
+                <button [disabled]="!committeeForm.valid" type="submit" class="btn btn-default" style="height: 55px; width:30%">Next</button>
+            </div>
+        </div>
+    </div>
+
+</form>

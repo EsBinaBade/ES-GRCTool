@@ -1,0 +1,67 @@
+﻿
+<div class="row">
+    <p>Provide all required information below</p>
+    <hr />
+    <p><b>R=</b> Responsible(Who will do the tasks?)</p>
+    <p><b>A=</b> Accountable(Who is accountable if the task goes wrong and who has the authority to take a decision?)</p>
+    <p><b>S=</b> Support (Who will assist during this task?)</p>
+    <p><b>C=</b> Consulted (Who can be consulted during this tasks?)</p>
+    <p><b>I=</b> Informed (Who needs to be updated about the progress of this tasks?Anyone's work depends on this task that needs to be informed?)</p>
+
+</div>
+
+<style>
+    .class1 {
+        background: red;
+        background-image: url("r.png");
+    }
+    .class2 {
+        background: green;
+        content: url(r.png);
+    }
+</style>
+<!--<button onclick="myFunction()">Try it</button>-->
+
+    <div class="row" >
+        <p>ISMS</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>PLAN</th>
+                    <th></th>
+                    <th>R</th>
+                    <th>A</th>
+                    <th>S</th>
+                    <th>C</th>
+                    <th>I</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tasks of TaskList">
+                    <td>{{tasks.taskName}}</td>
+
+                    <td><span class="glyphicon glyphicon-pencil" [routerLink]="['/addSwot', tasks.taskId]"></span></td>
+                
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" [routerLink]="['/addSwotRole']" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+
+            </tr>
+            <!--<tr>
+                <td>Define internal And External Issues</td>
+                <td><span class="glyphicon glyphicon-pencil"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+
+            </tr>-->
+        </tbody>
+    </table>
+
+</div>
+
+

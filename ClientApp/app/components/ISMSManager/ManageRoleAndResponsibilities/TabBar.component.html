@@ -1,0 +1,35 @@
+﻿<div class="container" style="width:100%">
+    <div class="col-sm-12">
+        <div class='col-sm-3'>
+            <nav-menu></nav-menu>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card grey lighten-2">
+                        <div class="card-tabs">
+                            <ul class="tabs tabs-fixed-width tabs-transparent">
+                                <li class="tab">
+                                    <a routerLink='/rolesNResponsibilities' routerLinkActive='active'>Roles And Responsibilities</a>
+                                </li>
+                                <li class="tab">
+                                    <a routerLink='/viewCommittee' routerLinkActive='active'>Committee Charter</a>
+                                </li>
+                                <li class="tab">
+                                    <a routerLink='/viewTaskAssignment' routerLinkActive='active'>Task Assignment</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="card-content white">
+                            <div class="row">
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

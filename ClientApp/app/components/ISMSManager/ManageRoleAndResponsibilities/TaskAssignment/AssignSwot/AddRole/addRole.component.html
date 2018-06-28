@@ -1,0 +1,19 @@
+﻿
+<form [formGroup]="roleForm" (OnSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="row">
+        <label class="control-label col-md-12" for="roleName">Responsible</label>
+        <select class="form-control" data-val="true" formControlName="roleName">
+            <option value=""> Select Role</option>
+            <option *ngFor="let role of roles" value="{{role.roleName}}">{{role.roleName}}</option>
+        </select>
+        <div *ngIf="roleName.errors && (roleName.dirty || roleName.touched)" class="alert alert-danger">
+            <div [hidden]="!roleName.errors.required">
+                Role Name is Required
+            </div>
+        </div>
+    </div>
+    <div class="row" style="float:right">
+        <button type="submit" class="btn btn-primary" [disabled]="!roleForm.valid">Save</button>
+        <button type="button" class="btn btn-default" (click)="cancel()">Close</button>
+    </div>
+</form>
