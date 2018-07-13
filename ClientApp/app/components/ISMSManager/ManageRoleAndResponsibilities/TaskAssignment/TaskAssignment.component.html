@@ -1,4 +1,9 @@
-﻿
+﻿<div class="progress" style="height:17px; background-color:lightgray">
+    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:95%">
+        80% Complete
+    </div>
+</div>
 <div class="row">
     <p>Provide all required information below</p>
     <hr />
@@ -40,25 +45,16 @@
                 <tr *ngFor="let tasks of TaskList">
                     <td>{{tasks.taskName}}</td>
 
-                    <td><span class="glyphicon glyphicon-pencil" [routerLink]="['/addSwot', tasks.taskId]"></span></td>
+                    <td><span class="glyphicon glyphicon-pencil" [routerLink]="['/editTaskDetails/', tasks.taskDetailsId]"></span></td>
                 
-                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" [routerLink]="['/addSwotRole']" style="float:right"></span></td>
-                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" [routerLink]="['/editAssignedRoles/', tasks.taskDetailsId]" style="float:right"></span></td>
+                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right" [routerLink]="['/editAssignedRoles/', tasks.taskDetailsId]"></span></td>
                 <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
                 <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
                 <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
 
             </tr>
-            <!--<tr>
-                <td>Define internal And External Issues</td>
-                <td><span class="glyphicon glyphicon-pencil"></span></td>
-                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
-                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
-                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
-                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
-                <td class="class1" onclick="toogleClass(this)"><span class="glyphicon glyphicon-pencil" style="float:right"></span></td>
-
-            </tr>-->
+           
         </tbody>
     </table>
 

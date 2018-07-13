@@ -46,7 +46,38 @@ import { AddCommitteeComponent } from './components/ISMSManager/ManageRoleAndRes
 //Task Assignment Begins
 import { TaskAssignmentComponent } from './components/ISMSManager/ManageRoleAndResponsibilities/TaskAssignment/TaskAssignment.component';
 import { AssignSwotComponent } from './components/ISMSManager/ManageRoleAndResponsibilities/TaskAssignment/AssignSwot/AddSwot.component';
-import { AddRoleSwotComponent} from './components/ISMSManager/ManageRoleAndResponsibilities/TaskAssignment/AssignSwot/AddRole/addRole.component';
+//import { AddRoleSwotComponent } from './components/ISMSManager/ManageRoleAndResponsibilities/TaskAssignment/AssignSwot/AddRole/addRole.component';
+import { EditAssignedRoleComponent} from './components/ISMSManager/ManageRoleAndResponsibilities/TaskAssignment/EditTaskAssignmentDetails/EditAssignedRole/EditAssignedRoles.component';
+import { EditTaskDetailsComponent} from './components/ISMSManager/ManageRoleAndResponsibilities/TaskAssignment/EditTaskAssignmentDetails/EditTaskDetails.component';
+
+//Task By Users
+//Swot Analysis Task
+import { SwotTabComponent } from './components/UsersTasks/SwotAnalysis/SwotTab.component';
+import { ViewSwotAnalysisComponent} from './components/UsersTasks/SwotAnalysis/ViewSwotAnalysis.component';
+import { AddSwotAnalysisComponent } from './components/UsersTasks/SwotAnalysis/AddSwotAnalysis.component';
+import { EditSwotAnalysisComponent } from './components/UsersTasks/SwotAnalysis/EditSwotAnalysis.component';
+
+//Issues
+import { ViewIssuesComponent } from './components/UsersTasks/Issues/ViewIssues.component';
+import { EditIssuesComponent } from './components/UsersTasks/Issues/EditIssues.component';
+import { AddIssuesComponent } from './components/UsersTasks/Issues/AddIssues.component';
+
+//Legal Requirements
+import { AddLegalRequirementComponent} from './components/UsersTasks/LegalRequirements/AddLegalRequirement.component';
+
+//Add Scope
+import { AddScopeComponent } from './components/UsersTasks/ScopeStatement/AddScope.component';
+
+//AddGoal
+import { AddGoalComponent } from './components/UsersTasks/DefineGoals/AddGoals.component';
+import { ViewGoalsComponent } from './components/UsersTasks/DefineGoals/ViewGoals.component';
+import { EditGoalsComponent } from './components/UsersTasks/DefineGoals/EditGoals.component';
+
+//Objectives
+import { AddObjectivesComponent } from './components/UsersTasks/DefineGoals/DefineObjectives/AddObjectives.component';
+import { EditObjectivesComponent } from './components/UsersTasks/DefineGoals/DefineObjectives/EditObjectives.component';
+
+
 import { appRoutes } from './routes';
 
 @NgModule({
@@ -86,7 +117,32 @@ import { appRoutes } from './routes';
 
         TaskAssignmentComponent,
         AssignSwotComponent,
-        AddRoleSwotComponent,
+        EditAssignedRoleComponent,
+        EditTaskDetailsComponent,
+
+        //Users Tasks
+        //Swot Analysis
+        SwotTabComponent,
+        ViewSwotAnalysisComponent,
+        AddSwotAnalysisComponent,
+        EditSwotAnalysisComponent,
+
+        //Issues
+        ViewIssuesComponent,
+        EditIssuesComponent,
+        AddIssuesComponent,
+
+        AddLegalRequirementComponent,
+        AddScopeComponent,
+
+        //AddGoals
+        AddGoalComponent,
+        ViewGoalsComponent,
+        EditGoalsComponent,
+
+        //AddObjectives
+        AddObjectivesComponent,
+        EditObjectivesComponent,
 
         HomeComponent
         

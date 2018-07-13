@@ -1,0 +1,113 @@
+﻿<div class="container">
+    <div class="col-sm-12">
+        <div class='col-sm-3'>
+            <nav-menu></nav-menu>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="card grey lighten-2">
+                    <form class="col s12 white" [formGroup]="editObjectiveForm" #formDir="ngForm" (ngSubmit)="save()">
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h6 style="color:darkcyan">Objective Details</h6>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Goals:</label>
+                                    <select class="form-control" data-val="true" formControlName="goalId">
+                                        <option value="">Select Goals</option>
+                                        <option *ngFor="let goals of goalList" value="{{goals.goalId}}">{{goals.goalId}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Objective Number:</label>
+                                    <input class="form-control" type="text" formControlName="objectiveNumber">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>(S)MART Specific</label>
+                                    <br />
+                                    <label>What do you want to achieve?</label>
+                                    <textarea type="text" class="form-control" formControlName="smarTspecific"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>S(M)ART Measureable </label>
+                                    <br />
+                                    <label>How much or how many?</label>
+                                    <textarea type="text" class="form-control" formControlName="sMARTmeasurable"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>SM(A)RT Achievable</label>
+                                    <br />
+                                    <label>Is there a project with adequate resources to achieve this?</label>
+                                    <select class="form-control" data-val="true" formControlName="sMARTacheivable">
+                                        <option value="">--Select--</option>
+                                        <option value="yes">YES</option>
+                                        <option value="no">NO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>SMA(R)T Realistic</label>
+                                    <br />
+                                    <label>Is this realistic?</label>
+                                    <select class="form-control" data-val="true" formControlName="sMARTrealistic">
+                                        <option value="">--Select--</option>
+                                        <option value="yes">YES</option>
+                                        <option value="no">NO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>SMAR(T) Timed</label>
+                                    <br />
+                                    <label>What is the deadline?</label>
+                                    <input class="form-control" type="date" formControlName="sMARTtimed">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>SMART Objective </label>
+                                    <textarea class="form-control" formControlName="sMARTobjective"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Related Project(s)</label>
+                                    <input class="form-control" type="text" formControlName="relatedProjects">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Responsible Person</label>
+                                    <input class="form-control" type="text" formControlName="responsiblePerson">
+                                </div>
+                            </div>
+                            <div class="row" style="float:right">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

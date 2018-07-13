@@ -1,0 +1,52 @@
+﻿<div class="container" >
+    <div class="col-sm-12">
+        <div class='col-sm-3'>
+            <nav-menu></nav-menu>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                    <div class="card grey lighten-2">
+                        <div class="row" style="background-color:#26a69a">
+                            <h4 align="center" style="color: white" >Define Legal Requirements</h4>
+                        </div>
+                        <form class="col s12 white" [formGroup]="legalForm" #formDir="ngForm" (ngSubmit)="save()">
+                           <br />
+                           <div class="row">
+                               <div class="col-md-12">
+                                   Define the legal requirements by choosing your country in the dropdown below:
+                               </div>
+                           </div>
+                            <hr />
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Country:</label>
+                                        <select class="form-control" data-val="true" formControlName="countryId" (change)="populateCity($event.target.value)">
+                                            <option value="">Select Country</option>
+                                            <option *ngFor="let countries of countryList" value="{{countries.countryId}}">{{countries.countryName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>City:</label>
+                                        <select class="form-control" data-val="true" formControlName="cityName">
+                                            <option value="">Select City</option>
+                                            <option *ngFor="let city of cityList" value="{{city.cityName}}">{{city.cityName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="float:right">
+                                    <div class="col-md-12">
+                                        <button [disabled]="!legalForm.valid" type="submit" class="btn btn-primary">Save</button>
+                                        <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,22 @@
+﻿
+<form [formGroup]="editAssignedRoleForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group">
+
+        <div class="row">
+            <label>Responsible</label>
+            <select class="form-control" data-val="true" formControlName="responsible">
+                <option value=""> Select Role</option>
+                <option *ngFor="let role of roles" value={{role.roleName}}>{{role.roleName}}</option>
+            </select>
+            <div *ngIf="responsible.errors && (responsible.dirty || responsible.touched)" class="alert alert-danger">
+                <div [hidden]="!responsible.errors.required">
+                    Role Name is Required
+                </div>
+            </div>
+        </div>
+        <div class="row" style="float:right">
+            <button type="submit" class="btn btn-default">Save</button>
+            <button type="button" class="btn btn-default" (click)="cancel()">Close</button>
+        </div>
+    </div>
+</form>

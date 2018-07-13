@@ -27,19 +27,22 @@ export class AssignSwotComponent implements OnInit {
             this.taskId = this._avRoute.snapshot.params["taskId"];
         }
 
+      
+    }
+
+    ngOnInit() {
+
         this.swotForm = this._fb.group({
             taskDetailsId: 0,
             deadline: ['', [Validators.required]],
             frequency: ['', [Validators.required]],
             classificationLevelId: ['', [Validators.required]],
             reviewer: ['', [Validators.required]],
-            approver: ['', [Validators.required]]
+            approver: ['', [Validators.required]],
+            taskId: this.taskId
 
         });
-      
-    }
 
-    ngOnInit() {
         this._classificationLevelService.getClassificationlevel().subscribe(
             data => this.classificationLevelLists = data);
 
@@ -50,7 +53,7 @@ export class AssignSwotComponent implements OnInit {
     }
 
     save() {
-
+        console.log(this.swotForm.value);
         this._taskDetailsService.saveSwotTaskDetails(this.swotForm.value).subscribe(
             (data) => {
                 alert("Task Assigned Successfully");

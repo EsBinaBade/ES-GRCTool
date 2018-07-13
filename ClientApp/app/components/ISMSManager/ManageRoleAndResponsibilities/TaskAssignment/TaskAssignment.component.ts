@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { TaskList } from './TaskList.model';
+import { TaskDetails} from './TaskDetails.model';
 import { TaskAssignmentService} from './TaskAssignment.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { TaskAssignmentService} from './TaskAssignment.service';
 })
 
 export class TaskAssignmentComponent implements OnInit {
-    TaskList: TaskList[];
+    TaskList: TaskDetails[];
 
     constructor(private _taskService: TaskAssignmentService) {
         this.getTaskList();

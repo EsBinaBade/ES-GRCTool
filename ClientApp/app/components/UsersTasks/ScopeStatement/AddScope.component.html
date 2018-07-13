@@ -1,0 +1,52 @@
+﻿<div class="container">
+    <div class="col-sm-12">
+        <div class='col-sm-3'>
+            <nav-menu></nav-menu>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="card grey lighten-2">
+                    <div class="row" style="background-color:#26a69a">
+                        <h4 align="center" style="color: white">Define Scope Statements</h4>
+                    </div>
+                    <form class="col s12 white" [formGroup]="SOAForm" #formDir="ngForm" (ngSubmit)="save()">
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                Define the scope by completing below fields:
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Department(s):</label>
+                                    <textarea type="text" formControlName="departments" placeholder="Departments"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Statement of Applicability:</label>
+                                    <input type="text" formControlName="sOA" placeholder="Latest SOA filename including file ending" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Statement of Applicability Date:</label>
+                                    <input type="date" formControlName="sOADate" placeholder="Latest SOA date" />
+                                </div>
+                            </div>
+                            <div class="row" style="float:right">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

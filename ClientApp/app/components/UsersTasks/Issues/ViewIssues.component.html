@@ -1,0 +1,95 @@
+﻿<div class="progress" style="height:17px;background-color:lightgray">
+    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        90% Complete
+    </div>
+</div>
+<p>Complete the issues by providing all required informations</p>
+<hr />
+
+<div class="col-md-12">
+    <a>
+        <div data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse1" href="#collapse1" class="col-md-12" style="color:white; font-size:20px; height:30px; background-color:lightgray">
+            Internal Issues
+            <span style="float:right; margin-top:5px;" class="glyphicon glyphicon-chevron-down"></span>
+        </div>
+    </a>
+
+    <div class="col-md-12">
+        <div class="collapse" id="collapse1">
+            <table class="table" *ngIf="issueList">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Issues</th>
+                        <th>Type</th>
+
+                        <th><span class="glyphicon glyphicon-plus" [routerLink]="['/addIssues']"> </span></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let issues of issueList">
+                        <td><span class="glyphicon glyphicon-edit" [routerLink]="['/editIssues/', issues.issueId]"></span></td>
+                        <td>{{issues.description}}</td>
+                        <td>{{issues.type}}</td>
+                        <td><span class="glyphicon glyphicon-trash" (click)="delete(issues.issueId)"></span></td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <br />
+        </div>
+        </div>
+    </div>
+
+        <br />
+        <br />
+
+
+        <div class="col-md-12">
+            <a>
+                <div data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse" href="#collapse" class="col-md-12" style="color:white; font-size:20px; height:30px; background-color:lightgray">
+                    External Issues
+                    <span style="float:right; margin-top:5px;" class="glyphicon glyphicon-chevron-down"></span>
+                </div>
+            </a>
+
+            <div class="col-md-12">
+                <div class="collapse" id="collapse" >
+                    <table class="table" *ngIf="issue">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Issues</th>
+                                <th>Type</th>
+
+                                <th><span class="glyphicon glyphicon-plus" [routerLink]="['/addIssues']"> </span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let issues of issue">
+                                <td><span class="glyphicon glyphicon-edit" [routerLink]="['/editIssues/', issues.issueId]"></span></td>
+                                <td>{{issues.description}}</td>
+                                <td>{{issues.type}}</td>
+                                <td><span class="glyphicon glyphicon-trash" (click)="delete(issues.issueId)"></span></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                    <br />
+                </div>
+            </div>
+        </div>
+        <br />
+<br />
+
+
+<div class="col-md-12" style="margin-left:40%">
+    <button class="btn btn-default" [routerLink]="['/viewSwotAnalysis']">BACK</button>
+    <button class="btn btn-default">NEXT</button>
+
+</div>

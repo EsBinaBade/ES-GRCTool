@@ -35,6 +35,7 @@ export class ViewCommitteeComponent implements OnInit{
         if (ans) {
             this._committeeService.deleteCommittee(committeeId).subscribe(
                 (data) => {
+                    window.location.reload();
                     this._router.navigate(['/viewCommitte']);
                 })
         }

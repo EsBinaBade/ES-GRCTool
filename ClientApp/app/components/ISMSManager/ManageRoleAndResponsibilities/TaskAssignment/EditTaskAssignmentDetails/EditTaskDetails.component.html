@@ -1,0 +1,87 @@
+﻿
+
+<h4 align="center"> Task Details</h4>
+
+<form [formGroup]="editTaskDetailsForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="hidden" class="form-control" formControlName="taskName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label> DeadLine </label>
+                <input type="date" class="form-control" formControlName="deadline">
+                <div *ngIf="deadline.errors && (deadline.dirty || deadline.touched)" class="alert alert-danger">
+                    <div [hidden]="!deadline.errors.required">
+                        deadline Name Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label> Frequency</label>
+                <select class="form-control" data-val="true" formControlName="frequency">
+                    <option value=""> Select Frequency</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Montly">Montly</option>
+                    <option value="Annually">Annually</option>
+                </select>
+                <div *ngIf="frequency.errors && (frequency.dirty || frequency.touched)" class="alert alert-danger">
+                    <div [hidden]="!frequency.errors.required">
+                        Frequency Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label> Classification</label>
+                <select class="form-control" data-val="true" formControlName="classificationLevelId">
+                    <option value=""> Select classification</option>
+                    <option *ngFor="let levels of classificationLevelLists" value={{levels.classificationLevelId}}>
+                        {{levels.classificationName}}
+                    </option>
+                </select>
+                <div *ngIf="classificationLevelId.errors && (classificationLevelId.dirty || classificationLevelId.touched)" class="alert alert-danger">
+                    <div [hidden]="!classificationLevelId.errors.required">
+                        classificationName Name Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label> Reviewer </label>
+                <input class="form-control" formControlName="reviewer" placeholder="Enter Reviewer">
+                <div *ngIf="reviewer.errors && (reviewer.dirty || reviewer.touched)" class="alert alert-danger">
+                    <div [hidden]="!reviewer.errors.required">
+                        Reviewer Name Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label> Approver </label>
+                <input class="form-control" formControlName="approver" placeholder="Enter Approver">
+                <div *ngIf="approver.errors && (approver.dirty || approver.touched)" class="alert alert-danger">
+                    <div [hidden]="!approver.errors.required">
+                        Approver Name Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-danger" (click)="cancel()" type="button" style="height: 55px; width:30%">Cancel</button>
+
+                <button [disabled]="!editTaskDetailsForm.valid" type="submit" class="btn btn-default" style="height: 55px; width:30%">Next</button>
+            </div>
+        </div>
+    </div>
+
+</form>
+

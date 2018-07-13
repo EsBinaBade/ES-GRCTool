@@ -52,6 +52,18 @@
         @*<img src="r.png" style="height:10%; width:20px" />*@
 
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, options);
+            });
+
+  // Or with jQuery
+
+                $(document).ready(function(){
+                $('.collapsible').collapsible();
+                });
+      
+
             function toogleClass(a){
                 if (a.className == "class1"){
                     a.className = "class2" ;
@@ -68,5 +80,7 @@
                          //   (a.className == "class1" ?  a.className = "class2" : a.className = "class1")
 
         </script>
+
+
 
     </body>

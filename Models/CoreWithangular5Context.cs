@@ -19,9 +19,14 @@ namespace CoreWithAngular5.Models
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<TaskByRole> TaskByRole { get; set; }
         public virtual DbSet<TaskDetails> TaskDetails { get; set; }
-
-
-
+        public virtual DbSet<SwotAnalysis> SwotAnalysis { get; set; }
+        public virtual DbSet<Issues> Issues { get; set; }
+        public virtual DbSet<LegalRequirements> LegalRequirements { get; set; }
+        public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<ScopeStatements> ScopeStatements { get; set; }
+        public virtual DbSet<Goals> Goals { get; set; }
+        public virtual DbSet<Objectives> Objectives { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

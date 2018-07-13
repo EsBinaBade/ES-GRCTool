@@ -80,7 +80,7 @@ export class AddCommitteeComponent implements OnInit{
 
     get chairman() { return this.committeeForm.get('chairman'); }
     get deputyChairman() { return this.committeeForm.get('deputyChairman'); }
-    get members() { return this.committeeForm.get('members') };
+    get members() { return this.committeeForm.get('members'); }
     get about() { return this.committeeForm.get('about'); }
     get attendance() { return this.committeeForm.get('attendance'); }
     get voting() { return this.committeeForm.get('voting'); }

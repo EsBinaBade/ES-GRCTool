@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import { TaskList} from '../TaskList.model';
 
 @Injectable()
 
@@ -17,14 +18,15 @@ export class SwotTaskDetailService {
     }
     
     saveSwotTaskDetails(taskDetails) {
-        debugger;
-        return this._http.post(this.myAppUrl + "api/AddTaskDetails", taskDetails)
+        let body = JSON.stringify(taskDetails);
+        console.log("this is passed data" + body);
+        return this._http.post(this.myAppUrl + "api/AddTaskDetails", body)
             .map((response: Response) => response.json())
             .catch(this.errorHandler);
     }
 
-    getTaskListById(taskId) {
-        return this._http.get(this.myAppUrl + "api/GetTaskListById/", taskId)
+    getTaskListById(taskId: number) {
+        return this._http.get(this.myAppUrl + "api/GetTaskListById/" + taskId)
             .map((response: Response) => response.json())
             .catch(this.errorHandler);
     }
